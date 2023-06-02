@@ -8,3 +8,5 @@
 @import "components/modal/add_user.css";
 @import "components/UI/input.css";
 @import "components/UI/modal.css";
+
+@import "components/table/table.css";

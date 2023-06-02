@@ -1,6 +1,6 @@
 .footer {
   min-height: 80px;
-  background-color: #F4F9FF;
+  background-color: var(--light-blue-bg);
 }
 .footer__wrap {
   display: flex;
