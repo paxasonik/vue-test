@@ -1,8 +1,12 @@
 <script>
 import {defineComponent} from 'vue'
+import AddUser from "./modal/AddUser.vue";
 
 export default defineComponent({
-  name: "Header"
+  name: "Header",
+  components: {
+    AddUser
+  },
 })
 </script>
 
@@ -12,9 +16,7 @@ export default defineComponent({
       <a href="" class="header__logo">
         Vue test
       </a>
-      <button class="btn header__create">
-        Добавить
-      </button>
+      <AddUser/>
     </div>
   </header>
 </template>
