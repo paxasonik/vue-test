@@ -1,0 +1,50 @@
+:root {
+  --blue-bg: #097DFF;
+  --blue-txt: #097DFF;
+  --white-bg: #FFFFFF;
+  --white-txt: #FFFFFF;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1630px;
+  }
+}
+
+.content {
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.btn {
+  background-color: var(--blue-bg);
+  border: 2px solid var(--blue-bg);
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--white-txt);
+  transition: all .3s ease-in-out;
+}
+.btn:hover {
+  background-color: var(--white-bg);
+  color: var(--blue-txt);
+}
