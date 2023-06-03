@@ -38,6 +38,10 @@ body,
   padding-bottom: 60px;
 }
 
+.content__main .container {
+  height: 100%;
+}
+
 .btn {
   background-color: var(--blue-bg);
   border: 2px solid var(--blue-bg);
@@ -47,7 +51,11 @@ body,
   color: var(--white-txt);
   transition: all .3s ease-in-out;
 }
-.btn:hover {
+.btn:hover:not(:disabled) {
   background-color: var(--white-bg);
   color: var(--blue-txt);
+}
+.btn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
 }

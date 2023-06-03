@@ -2,17 +2,23 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "TableList"
+  name: "TableList",
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    }
+  }
 })
 </script>
 
 <template>
   <div class="table__row">
     <div class="table__column">
-      Петя
+      {{ item.name }}
     </div>
     <div class="table__column">
-      +7(998)284-41-53
+      {{ item.phone }}
     </div>
   </div>
 </template>
