@@ -1,8 +1,11 @@
 <script>
 import {defineComponent} from 'vue'
+import {mapActions} from 'pinia';
 import Modal from '../UI/Modal.vue';
 import Input from '../UI/Input.vue';
 import {InputList,NameModal} from './constants';
+import {useUserStore} from '../../stores/user';
+
 
 export default defineComponent({
   name: "AddUser",
@@ -17,7 +20,21 @@ export default defineComponent({
       NameModal
     }
   },
+  computed: {
+    getUserData() {
+      const userData = {}
+      for (let i = 0; i < this.InputList.length; i++) {
+        userData[this.InputList[i].key] = this.InputList[i].value
+      }
+      return userData
+    },
+    isUserData() {
+      return !this.getUserData.name && !this.getUserData.phone
+    }
+  },
   methods: {
+    ...mapActions(useUserStore, ['addUser']),
+
     showModal() {
       this.isModalVisible = true
     },
@@ -27,9 +44,10 @@ export default defineComponent({
       }
       this.isModalVisible = false;
     },
-    addUser() {
-
-    },
+    submit() {
+      this.addUser(this.getUserData)
+      this.closeModal()
+    }
   }
 })
 </script>
@@ -57,7 +75,7 @@ export default defineComponent({
         </template>
 
         <template v-slot:footer>
-          <button class="btn" @click="addUser">
+          <button class="btn" @click="submit" :disabled="isUserData">
             Сохранить
           </button>
         </template>

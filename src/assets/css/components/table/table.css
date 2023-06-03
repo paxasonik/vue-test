@@ -2,6 +2,14 @@
   border-top: 1px solid var(--border-grey);
   border-left: 1px solid var(--border-grey);
 }
+.table__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: "Raffic", sans-serif;
+}
 .table__row {
   display: flex;
 }

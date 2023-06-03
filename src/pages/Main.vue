@@ -9,7 +9,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <main class="content">
+  <main class="content__main content">
     <div class="container">
       <Table/>
     </div>
