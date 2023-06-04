@@ -1,35 +1,48 @@
 <script>
 import {defineComponent} from 'vue'
-import {mapActions} from 'pinia';
+import {mapActions, mapState} from 'pinia';
 import Modal from '../UI/Modal.vue';
-import Input from '../UI/Input.vue';
-import {InputList,NameModal} from './constants';
+import FormField from "../UI/Form/FormField.vue";
+import FormSelect from "../UI/Form/FormSelect.vue";
+import FormInput from "../UI/Form/FormInput.vue";
+import {InputList,NameModal,SelectLabel,SelectPlaceholder} from './constants';
 import {useUserStore} from '../../stores/user';
 
 
 export default defineComponent({
   name: "AddUser",
   components: {
+    FormInput,
+    FormSelect,
+    FormField,
     Modal,
-    Input
   },
   data() {
     return {
       isModalVisible: false,
+      director: '',
       InputList,
-      NameModal
+      NameModal,
+      SelectLabel,
+      SelectPlaceholder,
     }
   },
   computed: {
+    ...mapState(useUserStore, [
+      'getAllUsers',
+      'usersLength'
+    ]),
     getUserData() {
       const userData = {}
       for (let i = 0; i < this.InputList.length; i++) {
         userData[this.InputList[i].key] = this.InputList[i].value
       }
+      userData.id = this.usersLength
+      userData.children = []
       return userData
     },
-    isUserData() {
-      return !this.getUserData.name && !this.getUserData.phone
+    isCompletedForm () {
+      return !this.getUserData.name || !this.getUserData.phone
     }
   },
   methods: {
@@ -42,10 +55,11 @@ export default defineComponent({
       for (let i = 0; i < this.InputList.length; i++) {
         this.InputList[i].value = ''
       }
+      this.director = '';
       this.isModalVisible = false;
     },
     submit() {
-      this.addUser(this.getUserData)
+      this.addUser(this.getUserData, this.director)
       this.closeModal()
     }
   }
@@ -64,18 +78,26 @@ export default defineComponent({
         @closeModal="closeModal"
       >
         <template v-slot:content>
-          <Input
-            v-for="input in InputList"
-            :key="input.id"
-            v-model="input.value"
-            :label="input.label"
-            :type="input.type"
-            :maska="input.maska"
-          />
+          <FormField v-for="input in InputList" :key="input.id" :label="input.label">
+            <FormInput
+              :type="input.type"
+              :maska="input.maska"
+              :placeholder="input.placeholder"
+              :value.sync="input.value"
+            />
+          </FormField>
+          <FormField :label="SelectLabel" v-if="usersLength">
+            <FormSelect
+              :options="getAllUsers"
+              :placeholder="SelectPlaceholder"
+              :value.sync="director"
+              :selected="director"
+            />
+          </FormField>
         </template>
 
         <template v-slot:footer>
-          <button class="btn" @click="submit" :disabled="isUserData">
+          <button class="btn" @click="submit" :disabled="isCompletedForm">
             Сохранить
           </button>
         </template>

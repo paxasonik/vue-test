@@ -6,6 +6,8 @@
   --light-blue-bg: #F4F9FF;
   --light-blue-txt: #F4F9FF;
   --border-grey: #dadfe3;
+  --gray-txt: #b7b7b7;
+  --black-txt: #000000;
 }
 
 html,
@@ -55,7 +57,9 @@ body,
   background-color: var(--white-bg);
   color: var(--blue-txt);
 }
-.btn:disabled {
+
+
+:disabled {
   opacity: .7;
   cursor: not-allowed;
 }

@@ -23,7 +23,8 @@ body {
 }
 input,
 button,
-textarea {
+textarea,
+select {
   font-family: "Montserrat", "Arial", sans-serif;
   outline: none;
   outline-offset: 0;
