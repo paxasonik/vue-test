@@ -35,7 +35,7 @@ export const useUserStore = defineStore('user', {
           arr[i].children.push(user)
         }
         if(arr[i].children){
-          this.addChildren(arr[i].children, director)
+          this.addChildren(arr[i].children, user, director)
         }
       }
     },

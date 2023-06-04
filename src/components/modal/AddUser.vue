@@ -71,7 +71,7 @@ export default defineComponent({
     <button class="btn" @click="showModal">
       Добавить
     </button>
-    <transition name="add__user">
+    <transition name="fade">
       <Modal
         v-show="isModalVisible"
         :titleModal="NameModal"
