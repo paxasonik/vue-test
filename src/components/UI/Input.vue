@@ -35,9 +35,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <label class="input">
-    <span class="input__label" v-if="label">{{ label }}</span>
+  <label class="input__inner">
+    <span class="input__inner-label" v-if="label">{{ label }}</span>
     <input
+      class="input__inner-input"
       :type="type"
       :value="value"
       @input="onInput"
