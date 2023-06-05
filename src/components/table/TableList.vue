@@ -29,7 +29,7 @@ export default defineComponent({
 <template>
   <transition name="fade">
     <div class="table__inner">
-      <div class="table__row" @click="toggleChildren">
+      <div class="table__row" :class="{ 'dropdown': item.children.length }" @click="toggleChildren">
         <div class="table__column column" :style="{ paddingLeft: 20 + level * 25 + 'px' }">
           <span v-if="level" class="column__plus">+</span>
           <div class="column__name">

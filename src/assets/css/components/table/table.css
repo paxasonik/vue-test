@@ -13,6 +13,13 @@
 .table__row {
   display: flex;
 }
+.table__row.dropdown {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.table__row.dropdown:hover {
+  opacity: .7;
+}
 .table__column {
   flex: 0 0 50%;
   overflow-x: auto;
@@ -21,12 +28,28 @@
   border-bottom: 1px solid var(--border-grey);
 }
 .table__header .table__column {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   background-color: var(--light-blue-bg);
   padding: 30px 20px;
   font-size: 1.125rem;
   font-weight: 500;
+  cursor: pointer;
 }
+.table__header .table__column:after {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid var(--border-grey);
+  transition: all .3s ease-in-out;
+}
+.table__header .table__column.name__asc:after,
+.table__header .table__column.phone__asc:after {
+  transform: rotate(180deg);
+}
+
 
 .table__column.column {
   display: flex;

@@ -13,7 +13,7 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useUserStore, [
-      'getUsers',
+      'sortUsers',
       'usersLength'
     ]),
   }
@@ -23,7 +23,7 @@ export default defineComponent({
 <template>
   <div class="table" v-if="usersLength">
     <TableHeader/>
-    <TableList v-for="item in getUsers" :key="item.id" :item="item" :level="0"/>
+    <TableList v-for="item in sortUsers" :key="item.id" :item="item" :level="0"/>
   </div>
   <div class="table__empty" v-else>
     Таблица пуста &#128577;
