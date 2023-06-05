@@ -83,10 +83,26 @@
 @media screen and (max-width: 399px) {
   .table__column {
     font-size: .875rem;
-    padding: 15px 10px;
+    padding: 20px 10px;
   }
   .table__header .table__column {
     font-size: 1rem;
     padding: 20px 15px;
+  }
+  .table__column.column {
+    gap: 5px;
+  }
+  .column__plus {
+    font-size: 1.125rem;
+    font-weight: normal;
+  }
+  .column__notification {
+    position: absolute;
+    top: -1rem;
+    right: -2rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: .625rem;
+    font-weight: normal;
   }
 }
