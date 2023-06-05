@@ -1,0 +1,10 @@
+.footer {
+  min-height: 80px;
+  background-color: var(--light-blue-bg);
+}
+.footer__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

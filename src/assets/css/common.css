@@ -1,0 +1,87 @@
+:root {
+  --blue-bg: #097DFF;
+  --blue-txt: #097DFF;
+  --white-bg: #FFFFFF;
+  --white-txt: #FFFFFF;
+  --light-blue-bg: #F4F9FF;
+  --light-blue-txt: #F4F9FF;
+  --border-grey: #dadfe3;
+  --gray-txt: #b7b7b7;
+  --black-txt: #000000;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1630px;
+  }
+}
+
+.content {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  flex: 1;
+}
+
+.content__main .container {
+  height: 100%;
+}
+
+.btn {
+  background-color: var(--blue-bg);
+  border: 2px solid var(--blue-bg);
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--white-txt);
+  transition: all .3s ease-in-out;
+}
+.btn:hover:not(:disabled) {
+  background-color: var(--white-bg);
+  color: var(--blue-txt);
+}
+
+
+:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+
+/*Animation*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade__add-enter-active {
+  transition: all .3s ease;
+}
+.fade__add-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade__add-enter, .fade__add-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}

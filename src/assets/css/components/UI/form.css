@@ -1,0 +1,27 @@
+.form__inner {
+  display: block;
+}
+.form__inner-label {
+  font-size: .875rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.input,
+.select {
+  width: 100%;
+  min-height: 40px;
+  padding: 5px 10px;
+  border: 1px solid var(--blue-bg);
+  border-radius: 8px;
+  font-size: .9375rem;
+}
+
+.input::placeholder,
+.select.empty,
+.select .placeholder {
+  color: var(--gray-txt);
+}
+
+.select option {
+  color: var(--black-txt);
+}

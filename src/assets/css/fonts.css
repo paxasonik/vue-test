@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+@font-face {
+  font-display: swap;
+  font-weight: bold;
+  font-family: 'Raffic';
+  font-style: normal;
+  src: url("../fonts/Raffic/RifficFree-Bold.woff") format("woff");
+  src: url("../fonts/Raffic/RifficFree-Bold.woff2") format("woff2");
+}

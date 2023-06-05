@@ -1,0 +1,12 @@
+@import "fonts.css";
+@import "reset.css";
+@import "common.css";
+
+@import "components/header.css";
+@import "components/footer.css";
+
+@import "components/modal/add_user.css";
+@import "components/UI/form.css";
+@import "components/UI/modal.css";
+
+@import "components/table/table.css";
