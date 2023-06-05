@@ -35,9 +35,9 @@ body,
 }
 
 .content {
-  height: 100%;
   padding-top: 40px;
   padding-bottom: 60px;
+  min-height: calc(100vh - 150px);
 }
 
 .content__main .container {
@@ -62,4 +62,26 @@ body,
 :disabled {
   opacity: .7;
   cursor: not-allowed;
+}
+
+
+/*Animation*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade__add-enter-active {
+  transition: all .3s ease;
+}
+.fade__add-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade__add-enter, .fade__add-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
 }

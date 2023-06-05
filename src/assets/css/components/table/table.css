@@ -16,7 +16,7 @@
 .table__column {
   flex: 0 0 50%;
   overflow-x: auto;
-  padding: 20px;
+  padding: 30px 25px;
   border-right: 1px solid var(--border-grey);
   border-bottom: 1px solid var(--border-grey);
 }
@@ -26,6 +26,35 @@
   padding: 30px 20px;
   font-size: 1.125rem;
   font-weight: 500;
+}
+
+.table__column.column {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.column__plus {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: .8;
+}
+.column__name {
+  position: relative;
+}
+.column__notification {
+  position: absolute;
+  top: -1.25rem;
+  right: -2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--blue-bg);
+  border-radius: 50%;
+  font-size: .75rem;
+  font-weight: bold;
+  color: var(--white-txt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 399px) {

@@ -1,15 +1,5 @@
 .add__user .modal__content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-/*Animation*/
-.add__user-enter-active,
-.add__user-leave-active {
-  transition: opacity .5s;
-}
-.add__user-enter,
-.add__user-leave-to {
-  opacity: 0;
+  gap: 20px;
 }
