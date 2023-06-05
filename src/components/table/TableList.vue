@@ -31,7 +31,7 @@ export default defineComponent({
     <div class="table__inner">
       <div class="table__row" :class="{ 'dropdown': item.children.length }" @click="toggleChildren">
         <div class="table__column column" :style="{ paddingLeft: 20 + level * 25 + 'px' }">
-          <span v-if="level" class="column__plus">+</span>
+          <span v-if="item.children.length" class="column__plus">+</span>
           <div class="column__name">
             {{ item.name }}
             <span v-if="item.children.length" class="column__notification">{{ item.children.length }}</span>
